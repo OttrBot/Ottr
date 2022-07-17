@@ -74,11 +74,8 @@ class CommandManager {
      * Reloads all commands
      */
     reloadAll() {
-        console.log("Called reload all");
-        this.commands.forEach((v, k) => {
-            console.log("entered for each")
-            console.log(k)
-            this.reload(k);
+        [...this.commands.keys()].forEach(cmd => {
+            this.reload(cmd);
         });
     }
 

@@ -18,9 +18,8 @@ const commands = {
         desc: "reload commands",
         /** @param {Bot} bot */
         run: async (bot) => {
-            console.log("reloading")
             bot.commands.reloadAll();
-            console.log("done")
+            console.log("Reloaded commands")
         }
     },
     "test": {
