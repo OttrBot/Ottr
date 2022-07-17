@@ -6,6 +6,13 @@ The goal with Ottr is to be a scalable and completely autonomous discord bot wit
 ## [Invite Bot](https://discord.com/api/oauth2/authorize?client_id=995597291849269339&permissions=2048&scope=applications.commands%20bot)
 
 
+## Setup and run
+
+Set `DISCORD_TOKEN` to env variable or create `.env` file in root directory with `DISCORD_TOKEN="bot-token"`
+
+run `node app.js`
+
+
 ## License
 
 Copyright (c) 2022 Tony (zfbx) <https://github.com/zfbx/>
