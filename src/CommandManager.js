@@ -79,6 +79,20 @@ class CommandManager {
         });
     }
 
+    registerGlobal() {
+        this.bot.application.commands.set(this.commandsObject).catch(console.error);
+    }
+
+    async unregisterGlobal() {
+        try {
+            await this.bot.application.commands.fetch();
+            this.bot.application.commands.cache.forEach((value, key) => {
+                console.log(`Deleting ${value.name} (${key})`);
+                value.delete();
+            });
+        } catch (e) { console.error(e); }
+    }
+
     run(name) {
 
     }

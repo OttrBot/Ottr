@@ -8,11 +8,6 @@ class Cmd extends Command {
             description: "Information on yours truly",
             options: [
                 {
-                    name: "ping",
-                    description: "Perforrm a ping check instead of normal bot info",
-                    type: "BOOLEAN",
-                },
-                {
                     name: "share",
                     description: "Post my reply for everyone to see",
                     type: "BOOLEAN",
@@ -22,13 +17,6 @@ class Cmd extends Command {
     }
 
     async run(client, interaction, args) {
-        const silent = args.share ? false : true;
-        if (args.ping) {
-            await interaction.deferReply({ ephemeral: silent }).catch(console.error);
-            const sent = await interaction.fetchReply();
-            const timeDiff = (sent.createdAt) - (interaction.createdAt);
-            return interaction.editReply(`Pong!\n🔂 **RTT**: ${timeDiff} ms\n💟 **Heartbeat**: ${Math.round(client.ws.ping)} ms`).catch(console.error);
-        }
 
         const embed = client.embed()
             .setTitle(client.user.tag.split("#")[0])

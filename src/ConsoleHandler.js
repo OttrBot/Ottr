@@ -19,7 +19,23 @@ const commands = {
         /** @param {Bot} bot */
         run: async (bot) => {
             bot.commands.reloadAll();
-            console.log("Reloaded commands")
+            console.log("Reloaded commands");
+        }
+    },
+    "reg": {
+        desc: "register global commands",
+        /** @param {Bot} bot */
+        run: async (bot) => {
+            bot.commands.registerGlobal();
+            console.log("Registered commands");
+        }
+    },
+    "unreg": {
+        desc: "unregister global commands",
+        /** @param {Bot} bot */
+        run: async (bot) => {
+            bot.commands.unregisterGlobal();
+            console.log("Unegistered commands");
         }
     },
     "test": {

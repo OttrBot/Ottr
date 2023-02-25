@@ -47,7 +47,7 @@ class Bot extends Client {
 
         // this.on("debug", logger.info);
 
-        // this.login(process.env.DISCORD_TOKEN).catch(logger.error);
+        this.login(process.env.DISCORD_TOKEN).catch(e => { this.logger.error(e) });
 
     }
 
